@@ -12,6 +12,13 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+// set unique constraint on email
+@Table(
+        uniqueConstraints = @UniqueConstraint(
+                name = "customerEmail",
+                columnNames = "customerEmail"
+        )
+)
 public class Customers {
     @Id
     @SequenceGenerator(

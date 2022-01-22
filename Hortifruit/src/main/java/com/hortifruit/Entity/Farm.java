@@ -12,6 +12,11 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(
+        uniqueConstraints={
+            @UniqueConstraint(columnNames = {"farmName", "farmLocation"})
+        }
+)
 public class Farm {
     @Id
     @SequenceGenerator(
