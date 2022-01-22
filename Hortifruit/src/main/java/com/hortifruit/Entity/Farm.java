@@ -25,7 +25,7 @@ public class Farm {
             allocationSize = 1
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "farm_seq")
-    private  String farmId;
+    private  Long farmId;
 
     @Column(nullable = false)
     private  String farmName;
@@ -33,7 +33,7 @@ public class Farm {
     @Column(nullable = false)
     private  String farmLocation;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "farm_fruit",
             joinColumns = @JoinColumn(name = "farmId"),

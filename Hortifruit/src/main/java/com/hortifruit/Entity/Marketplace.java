@@ -20,23 +20,23 @@ public class Marketplace {
             allocationSize = 1
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "marketplace_seq")
-    private String marketplaceId;
+    private Long marketplaceId;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(
             name = "customers_marketplace_id",
             referencedColumnName = "customerId"
     )
     private Customers customers;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(
             name = "farmers_marketplace_id",
             referencedColumnName = "farmerId"
     )
     private Farmers farmers;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(
             name = "fruit_marketplace_id",
             referencedColumnName = "fruitId"

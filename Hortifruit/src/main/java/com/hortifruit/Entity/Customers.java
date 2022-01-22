@@ -23,11 +23,11 @@ public class Customers {
     @Id
     @SequenceGenerator(
             name = "customer_seq",
-            sequenceName = "course_seq",
+            sequenceName = "customer_seq",
             allocationSize = 1
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_seq")
-    private String customerId;
+    private Long customerId;
 
     @Column(nullable = false)
     private String customerEmail;
@@ -38,6 +38,6 @@ public class Customers {
     private String customerLastName;
 
 
-    @OneToMany(mappedBy = "customers", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "customers", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Marketplace> marketplaces;
 }

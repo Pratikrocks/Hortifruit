@@ -26,7 +26,7 @@ public class Farmers {
             allocationSize = 1
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "farmer_seq")
-    private int farmerId;
+    private Long farmerId;
 
     @Column(nullable = false)
     private String farmerFirstName;
@@ -36,6 +36,6 @@ public class Farmers {
     @Column(nullable = false)
     private String farmerEmail;
 
-    @OneToMany(mappedBy = "farmers", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "farmers", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     List<Marketplace> marketplaces;
 }

@@ -26,7 +26,7 @@ public class Fruit {
             allocationSize = 1
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "fruit_seq")
-    private String fruitId;
+    private Long fruitId;
 
     @Column(nullable = false)
     private String fruitName;
@@ -37,6 +37,6 @@ public class Fruit {
     @ManyToMany(mappedBy = "fruits", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Farm> farms;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "fruit")
+    @OneToOne(cascade = CascadeType.ALL,mappedBy = "fruit", fetch = FetchType.EAGER)
     private Marketplace marketplace;
 }
