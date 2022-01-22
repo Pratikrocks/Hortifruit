@@ -33,7 +33,7 @@ public class Farm {
     @Column(nullable = false)
     private  String farmLocation;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
     @JoinTable(
             name = "farm_fruit",
             joinColumns = @JoinColumn(name = "farmId"),

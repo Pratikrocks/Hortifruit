@@ -36,6 +36,6 @@ public class Farmer {
     @Column(nullable = false)
     private String farmerEmail;
 
-    @OneToMany(mappedBy = "farmers", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "farmers", cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
     List<Marketplace> marketplaces;
 }

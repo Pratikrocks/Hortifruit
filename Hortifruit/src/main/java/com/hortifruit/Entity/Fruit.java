@@ -34,9 +34,14 @@ public class Fruit {
     @Column(nullable = false)
     private FruitType fruitType;
 
-    @ManyToMany(mappedBy = "fruits", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "farm_fruit",
+            joinColumns = @JoinColumn(name = "fruitId"),
+            inverseJoinColumns = @JoinColumn(name = "farmId")
+    )
     private List<Farm> farms;
 
-    @OneToOne(cascade = CascadeType.ALL,mappedBy = "fruit", fetch = FetchType.EAGER)
+    @OneToOne(cascade = {CascadeType.MERGE},mappedBy = "fruit", fetch = FetchType.EAGER)
     private Marketplace marketplace;
 }

@@ -38,6 +38,6 @@ public class Customer {
     private String customerLastName;
 
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "customer", cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
     private List<Marketplace> marketplaces;
 }

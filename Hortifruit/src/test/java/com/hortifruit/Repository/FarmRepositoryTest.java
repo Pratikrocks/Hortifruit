@@ -18,13 +18,15 @@ class FarmRepositoryTest {
     private FruitRepository fruitRepository;
 
     @Autowired
-    private CustomersRepository customersRepository;
+    private CustomerRepository customersRepository;
 
     @Test
     public void addFruit() {
-        Farm farm1 = Farm.builder().farmName("Sam Garden-Green").farmLocation("NYC").build();
-        Farm farm2 = Farm.builder().farmName("Rock Farm Grey").farmLocation("Seattle").build();
-        Fruit fruit = Fruit.builder().fruitName("Guava").fruitType(FruitType.MEDIUM).farms(Arrays.asList(new Farm[]{farm1, farm2})).build();
+        Farm farm1 = Farm.builder().farmName("NorthVoltaic 1").farmLocation("NYC").build();
+        Farm farm2 = Farm.builder().farmName("N California 1").farmLocation("Seattle").build();
+        Fruit fruit = Fruit.builder().fruitName("Grapes").fruitType(FruitType.MEDIUM).build();
+
+        fruit.setFarms(Arrays.asList(new Farm[]{farm1, farm2}));
 
         fruitRepository.save(fruit);
     }
@@ -46,6 +48,6 @@ class FarmRepositoryTest {
 //
 //        farmRepository.save(farm1);
 
-        System.out.println(farmRepository.findById(1L).get());
+        System.out.println(customersRepository.findAll());
     }
 }
