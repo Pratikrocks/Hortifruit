@@ -3,6 +3,7 @@ package com.hortifruit.Entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -14,12 +15,15 @@ import javax.persistence.*;
 public class Fruit {
     @Id
     @SequenceGenerator(
-            name = "customer_seq",
-            sequenceName = "course_seq",
+            name = "fruit_seq",
+            sequenceName = "fruit_seq",
             allocationSize = 1
     )
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_seq")
-    private String id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "fruit_seq")
+    private String fruitId;
     private String fruitName;
     private FruitType fruitType;
+
+    @ManyToMany(mappedBy = "fruits")
+    private List<Farm> farms;
 }
