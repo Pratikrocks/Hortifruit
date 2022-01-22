@@ -19,7 +19,7 @@ import java.util.List;
                 columnNames = "customerEmail"
         )
 )
-public class Customers {
+public class Customer {
     @Id
     @SequenceGenerator(
             name = "customer_seq",
@@ -38,6 +38,6 @@ public class Customers {
     private String customerLastName;
 
 
-    @OneToMany(mappedBy = "customers", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Marketplace> marketplaces;
 }

@@ -1,6 +1,6 @@
 package com.hortifruit.Repository;
 
-import com.hortifruit.Entity.Farmers;
+import com.hortifruit.Entity.Farmer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,22 +14,22 @@ class FarmersRepositoryTest {
 
     @Test
     public void addFarmer() {
-        Farmers farmer = Farmers.builder().farmerFirstName("Sam").farmerLastName("Doe").farmerEmail("jadev@gmail.com").build();
+        Farmer farmer = Farmer.builder().farmerFirstName("Sam").farmerLastName("Doe").farmerEmail("jadev@gmail.com").build();
         farmersRepository.save(farmer);
 //        assertNotNull(customer.getCustomerId());
-        List<Farmers> farmers = farmersRepository.findAll();
+        List<Farmer> farmers = farmersRepository.findAll();
         System.out.println(farmers);
     }
 
     @Test
     public void findAll(){
-        List<Farmers> farmers = farmersRepository.findAll();
+        List<Farmer> farmers = farmersRepository.findAll();
         System.out.println(farmers);
     }
 
     @Test
     public void findByFarmerId(){
-        Farmers farmers = farmersRepository.findById(5L).get();
+        Farmer farmers = farmersRepository.findById(5L).get();
         System.out.println(farmers);
     }
 

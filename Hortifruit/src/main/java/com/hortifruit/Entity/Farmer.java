@@ -18,7 +18,7 @@ import java.util.List;
                 columnNames = "farmerEmail"
         )
 )
-public class Farmers {
+public class Farmer {
     @Id
     @SequenceGenerator(
             name = "farmer_seq",

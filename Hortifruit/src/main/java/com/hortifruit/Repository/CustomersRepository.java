@@ -1,9 +1,9 @@
 package com.hortifruit.Repository;
 
-import com.hortifruit.Entity.Customers;
+import com.hortifruit.Entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CustomersRepository extends JpaRepository<Customers, Long> {
+public interface CustomersRepository extends JpaRepository<Customer, Long> {
 }

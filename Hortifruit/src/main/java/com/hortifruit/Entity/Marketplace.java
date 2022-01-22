@@ -27,14 +27,14 @@ public class Marketplace {
             name = "customers_marketplace_id",
             referencedColumnName = "customerId"
     )
-    private Customers customers;
+    private Customer customer;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(
             name = "farmers_marketplace_id",
             referencedColumnName = "farmerId"
     )
-    private Farmers farmers;
+    private Farmer farmers;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(
