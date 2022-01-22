@@ -28,8 +28,13 @@ public class Customers {
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_seq")
     private String customerId;
+
+    @Column(nullable = false)
     private String customerEmail;
+
+    @Column(nullable = false)
     private String customerFirstName;
+
     private String customerLastName;
 
 

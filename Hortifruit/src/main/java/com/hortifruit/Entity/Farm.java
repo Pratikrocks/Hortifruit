@@ -26,10 +26,14 @@ public class Farm {
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "farm_seq")
     private  String farmId;
+
+    @Column(nullable = false)
     private  String farmName;
+
+    @Column(nullable = false)
     private  String farmLocation;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "farm_fruit",
             joinColumns = @JoinColumn(name = "farmId"),

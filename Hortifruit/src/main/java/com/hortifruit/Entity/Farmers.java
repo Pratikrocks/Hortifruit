@@ -27,9 +27,13 @@ public class Farmers {
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "farmer_seq")
     private int farmerId;
+
+    @Column(nullable = false)
     private String farmerFirstName;
+
     private String farmerLastName;
     // unique email
+    @Column(nullable = false)
     private String farmerEmail;
 
     @OneToMany(mappedBy = "farmers", cascade = CascadeType.ALL)

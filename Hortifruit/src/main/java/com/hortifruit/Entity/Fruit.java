@@ -27,9 +27,16 @@ public class Fruit {
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "fruit_seq")
     private String fruitId;
+
+    @Column(nullable = false)
     private String fruitName;
+
+    @Column(nullable = false)
     private FruitType fruitType;
 
-    @ManyToMany(mappedBy = "fruits")
+    @ManyToMany(mappedBy = "fruits", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Farm> farms;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "fruit")
+    private Marketplace marketplace;
 }
