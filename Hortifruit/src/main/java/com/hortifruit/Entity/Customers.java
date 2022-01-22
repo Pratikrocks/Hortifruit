@@ -3,6 +3,7 @@ package com.hortifruit.Entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -19,9 +20,12 @@ public class Customers {
             allocationSize = 1
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_seq")
-    @Column(name = "customer_id")
-    private String id;
+    private String customerId;
     private String customerEmail;
     private String customerFirstName;
     private String customerLastName;
+
+
+    @OneToMany(mappedBy = "customers", cascade = CascadeType.ALL)
+    private List<Marketplace> marketplaces;
 }

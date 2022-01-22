@@ -19,7 +19,6 @@ public class Fruit {
             allocationSize = 1
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_seq")
-    @Column(name = "customer_id")
     private String id;
     private String fruitName;
     private FruitType fruitType;
