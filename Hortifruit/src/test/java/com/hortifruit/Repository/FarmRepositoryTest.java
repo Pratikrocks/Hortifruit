@@ -22,9 +22,9 @@ class FarmRepositoryTest {
 
     @Test
     public void addFruit() {
-        Farm farm1 = Farm.builder().farmName("NorthVoltaic 1").farmLocation("NYC").build();
-        Farm farm2 = Farm.builder().farmName("N California 1").farmLocation("Seattle").build();
-        Fruit fruit = Fruit.builder().fruitName("Grapes").fruitType(FruitType.MEDIUM).build();
+        Farm farm1 = Farm.builder().farmName("NorthVoltaic 3").farmLocation("NYC").build();
+        Farm farm2 = Farm.builder().farmName("N California 5").farmLocation("Seattle").build();
+        Fruit fruit = Fruit.builder().fruitName("Sugar Cane ").fruitType(FruitType.MEDIUM).build();
 
         fruit.setFarms(Arrays.asList(new Farm[]{farm1, farm2}));
 

@@ -14,7 +14,7 @@ class CustomerRepositoryTest {
 
     @Test
     public void addCustomer() {
-        Customer customer = Customer.builder().customerFirstName("Sam").customerLastName("Curran").customerEmail("Ronbon@gmail.com").build();
+        Customer customer = Customer.builder().customerFirstName("Robin").customerLastName("Curran").customerEmail("Ronbonsharma@gmail.com").build();
         customersRepository.save(customer);
 //        assertNotNull(customer.getCustomerId());
         List<Customer> customers = customersRepository.findAll();

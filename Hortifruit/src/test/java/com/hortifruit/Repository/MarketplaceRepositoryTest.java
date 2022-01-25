@@ -34,7 +34,7 @@ class MarketplaceRepositoryTest {
         Iterable<Fruit> fruitsIterator = fruitRepository.findAll();
         List<Fruit> fruits = Lists.newArrayList(fruitsIterator);
 //        System.out.println(fruits);
-        Farmer farmers = farmersRepository.findById(6L).get();
+        Farmer farmers = farmersRepository.findById(1L).get();
         Marketplace marketplace = Marketplace.builder().fruit(fruits.get(0)).customer(customer.get(0)).farmers(farmers).build();
 ////
         marketplaceRepository.save(marketplace);
@@ -44,6 +44,7 @@ class MarketplaceRepositoryTest {
     public void findMarketplace() {
         List<Marketplace> marketplaces = Lists.newArrayList(marketplaceRepository.findAll());
         Marketplace marketplace = marketplaces.get(0);
+        System.out.println(marketplace.getCustomer().getCustomerId());
     }
 
 }
