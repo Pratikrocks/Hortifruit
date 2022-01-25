@@ -1,5 +1,6 @@
 package com.hortifruit.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -33,6 +34,7 @@ public class Farm {
     @Column(nullable = false)
     private  String farmLocation;
 
+    @JsonIgnore
     @ManyToMany(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
     @JoinTable(
             name = "farm_fruit",

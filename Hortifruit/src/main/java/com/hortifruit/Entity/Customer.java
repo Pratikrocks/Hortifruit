@@ -1,5 +1,6 @@
 package com.hortifruit.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -37,7 +38,7 @@ public class Customer {
 
     private String customerLastName;
 
-
-    @OneToMany(mappedBy = "customer", cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
+    @JsonIgnore
+    @OneToMany(mappedBy = "customer", cascade = {CascadeType.MERGE}, fetch = FetchType.LAZY)
     private List<Marketplace> marketplaces;
 }

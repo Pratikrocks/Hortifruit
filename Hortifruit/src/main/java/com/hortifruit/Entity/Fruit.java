@@ -1,5 +1,6 @@
 package com.hortifruit.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -42,6 +43,7 @@ public class Fruit {
     )
     private List<Farm> farms;
 
+    @JsonIgnore
     @OneToOne(cascade = {CascadeType.ALL},mappedBy = "fruit", fetch = FetchType.EAGER)
     private Marketplace marketplace;
 }
