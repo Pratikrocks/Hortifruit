@@ -35,7 +35,7 @@ public class Fruit {
     @Column(nullable = false)
     private FruitType fruitType;
 
-    @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     @JoinTable(
             name = "farm_fruit",
             joinColumns = @JoinColumn(name = "fruitId"),
@@ -44,6 +44,6 @@ public class Fruit {
     private List<Farm> farms;
 
     @JsonIgnore
-    @OneToOne(cascade = {CascadeType.ALL},mappedBy = "fruit", fetch = FetchType.EAGER)
+    @OneToOne(cascade = {CascadeType.ALL},mappedBy = "fruit", fetch = FetchType.LAZY, orphanRemoval = true)
     private Marketplace marketplace;
 }

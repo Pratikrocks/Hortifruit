@@ -40,7 +40,7 @@ public class Marketplace implements Serializable {
     )
     private Farmer farmers;
 
-    @OneToOne(cascade = {CascadeType.MERGE}, fetch = FetchType.LAZY)
+    @OneToOne(cascade = {CascadeType.MERGE}, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn(
             name = "fruit_marketplace_id",
             referencedColumnName = "fruitId"

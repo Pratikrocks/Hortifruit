@@ -31,7 +31,6 @@ public class Greetings {
     @GetMapping("/marketplaces")
     public List<Marketplace> getMarketplaces() {
         List<Marketplace> ls = marketplaceRepository.findAll();
-        System.out.println(ls.get(0).getCustomer().getCustomerId());
         return marketplaceRepository.findAll();
     }
 }

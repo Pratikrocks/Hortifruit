@@ -22,8 +22,8 @@ class FarmRepositoryTest {
 
     @Test
     public void addFruit() {
-        Farm farm1 = Farm.builder().farmName("NorthVoltaic 3").farmLocation("NYC").build();
-        Farm farm2 = Farm.builder().farmName("N California 5").farmLocation("Seattle").build();
+        Farm farm1 = Farm.builder().farmName("NorthVoltaic 3").farmLocation("NYCK").build();
+        Farm farm2 = Farm.builder().farmName("N California 5").farmLocation("Seattle America").build();
         Fruit fruit = Fruit.builder().fruitName("Sugar Cane ").fruitType(FruitType.MEDIUM).build();
 
         fruit.setFarms(Arrays.asList(new Farm[]{farm1, farm2}));
@@ -33,10 +33,8 @@ class FarmRepositoryTest {
 
     @Test
     public void getFruit() {
-        Fruit fruit = fruitRepository.findById(1L).get();
-        System.out.println(fruit);
-
-        System.out.println(fruitRepository.findAll());
+        Fruit fruit = fruitRepository.findById(6L).get();
+        System.out.println(fruit.getFruitId());
     }
 
     @Test
@@ -48,6 +46,6 @@ class FarmRepositoryTest {
 //
 //        farmRepository.save(farm1);
 
-        System.out.println(customersRepository.findAll());
+        System.out.println(fruitRepository.findAll());
     }
 }
