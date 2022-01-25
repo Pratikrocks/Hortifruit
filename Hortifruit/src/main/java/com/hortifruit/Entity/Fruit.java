@@ -44,6 +44,6 @@ public class Fruit {
     private List<Farm> farms;
 
     @JsonIgnore
-    @OneToOne(cascade = {CascadeType.ALL},mappedBy = "fruit", fetch = FetchType.LAZY, orphanRemoval = true)
-    private Marketplace marketplace;
+    @OneToMany(cascade = {CascadeType.ALL},mappedBy = "fruit", fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<Marketplace> marketplace;
 }
