@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class MarketplaceControllers {
+public class MarketplaceController {
     @Autowired
     private MarketplaceRepository marketplaceRepository;
 
