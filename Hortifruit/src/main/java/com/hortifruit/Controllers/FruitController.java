@@ -13,9 +13,9 @@ public class FruitController {
     private FruitRepository fruitRepository;
 
     @PostMapping("/fruit")
-    public void fruit(@RequestBody Fruit fruit) {
+    public Fruit fruit(@RequestBody Fruit fruit) {
         System.out.println(fruit);
-        fruitRepository.save(fruit);
+        return fruitRepository.save(fruit);
     }
 
     @GetMapping("/fruit/{id}")

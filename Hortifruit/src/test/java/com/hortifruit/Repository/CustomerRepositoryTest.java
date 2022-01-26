@@ -30,7 +30,7 @@ class CustomerRepositoryTest {
     @Test
     public void findByCustomerId(){
         Customer customer = customersRepository.findById(2L).get();
-        System.out.println(customer);
+        System.out.println(customer.getCustomerId());
     }
 
 }
