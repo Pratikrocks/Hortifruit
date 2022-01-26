@@ -16,11 +16,11 @@ docker-compose up
 
 ## Controllers
 
-[Entities](./src/main/java/com/hortifruit/Controllers)
+[Controllers](./src/main/java/com/hortifruit/Controllers)
 
 ## Repository
 
-[Entities](./src/main/java/com/hortifruit/Repoitory)
+[Repository](./src/main/java/com/hortifruit/Repository)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
