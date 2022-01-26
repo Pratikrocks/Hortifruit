@@ -12,7 +12,7 @@ docker-compose up
 
 ## Schema of the Database
 
-[Entities](src/main/java/com/hortifruti/domain/entities/)
+[Entities](./src/main/java/com/hortifruit/Entity)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
